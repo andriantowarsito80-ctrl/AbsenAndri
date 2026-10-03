@@ -373,7 +373,13 @@ export default function App() {
       // Cancel previous speaking to prevent queues stacking up on fast scans
       window.speechSynthesis.cancel();
 
-      const utterance = new SpeechSynthesisUtterance(text);
+      // Normalisasi fonetik agar kata seperti SIMANJA dibaca utuh sebagai satu kata, bukan dieja huruf satu per satu
+      const spokenText = text
+        .replace(/\bSIMANJA\b/g, "Simanja")
+        .replace(/\bQr-Code\b/gi, "QR Code")
+        .replace(/\bSMAN\b/g, "SMA Negeri");
+
+      const utterance = new SpeechSynthesisUtterance(spokenText);
       utterance.lang = "id-ID"; // Set to Indonesian
       utterance.rate = 1.05;     // Slightly faster than standard for natural flow
       utterance.pitch = 1.0;    // Standard pitch
