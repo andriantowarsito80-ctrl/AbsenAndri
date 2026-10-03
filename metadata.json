@@ -1,0 +1,6 @@
+{
+  "name": "Absensi Sekolah QR Code",
+  "description": "Aplikasi absensi sekolah berbasis QR Code dengan live report, spreadsheet, rekapitulasi, dashboard kepatuhan, dan integrasi Google Apps Script.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

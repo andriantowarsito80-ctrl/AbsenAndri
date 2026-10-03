@@ -1,0 +1,120 @@
+{
+  "entities": {
+    "Student": {
+      "title": "Student",
+      "description": "Student data record",
+      "type": "object",
+      "properties": {
+        "nis": {
+          "type": "string",
+          "description": "Unique Student Identification Number"
+        },
+        "nama": {
+          "type": "string",
+          "description": "Student's Full Name"
+        },
+        "kelas": {
+          "type": "string",
+          "description": "Student's Class"
+        }
+      },
+      "required": ["nis", "nama", "kelas"]
+    },
+    "AttendanceRecord": {
+      "title": "AttendanceRecord",
+      "description": "Student daily attendance log",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique Record Identifier"
+        },
+        "nis": {
+          "type": "string",
+          "description": "Student Identification Number"
+        },
+        "nama": {
+          "type": "string",
+          "description": "Student's Name"
+        },
+        "kelas": {
+          "type": "string",
+          "description": "Student's Class"
+        },
+        "waktuAbsensi": {
+          "type": "string",
+          "description": "Timestamp of attendance in format YYYY-MM-DD HH:mm:ss"
+        },
+        "keterangan": {
+          "type": "string",
+          "enum": ["H", "DT", "S", "I", "A"],
+          "description": "Attendance Status: Hadir, Datang Terlambat, Sakit, Izin, Alpa"
+        },
+        "menitTerlambat": {
+          "type": "number",
+          "description": "Lateness duration in minutes"
+        }
+      },
+      "required": ["id", "nis", "nama", "kelas", "waktuAbsensi", "keterangan", "menitTerlambat"]
+    },
+    "SchoolProfile": {
+      "title": "SchoolProfile",
+      "description": "School administration profile and configuration",
+      "type": "object",
+      "properties": {
+        "namaSekolah": {
+          "type": "string"
+        },
+        "npsn": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "namaKepalaSekolah": {
+          "type": "string"
+        },
+        "semester": {
+          "type": "string",
+          "enum": ["Ganjil", "Genap"]
+        },
+        "tahunPelajaran": {
+          "type": "string"
+        },
+        "jamMasuk": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string"
+        },
+        "background": {
+          "type": "string"
+        },
+        "googleSheetsUrl": {
+          "type": "string"
+        },
+        "googleAppsScriptUrl": {
+          "type": "string"
+        },
+        "holidayRanges": {
+          "type": "array"
+        }
+      },
+      "required": ["namaSekolah", "npsn", "status", "namaKepalaSekolah", "semester", "tahunPelajaran", "jamMasuk"]
+    }
+  },
+  "firestore": {
+    "/students/{nis}": {
+      "schema": "Student",
+      "description": "School students directory"
+    },
+    "/records/{recordId}": {
+      "schema": "AttendanceRecord",
+      "description": "Attendance history logs"
+    },
+    "/school/{profileId}": {
+      "schema": "SchoolProfile",
+      "description": "School general profile information"
+    }
+  }
+}
