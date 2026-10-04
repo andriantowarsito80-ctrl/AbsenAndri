@@ -5,6 +5,7 @@ import {
   RefreshCw, QrCode
 } from "lucide-react";
 import { safeStorage } from "../utils/storage";
+import { PWAInstallButton } from "./PWAInstallButton";
 
 interface LoginScreenProps {
   onLoginSuccess: () => void;
@@ -312,10 +313,13 @@ export default function LoginScreen({ onLoginSuccess, schoolName, schoolLogo }: 
               </div>
             </div>
 
-            {/* Offline-First Ready Badge */}
-            <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full shrink-0 shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="text-[8px] font-black text-emerald-800 font-mono tracking-wider uppercase">Luring Ready</span>
+            <div className="flex items-center gap-2">
+              <PWAInstallButton variant="compact" />
+              {/* Offline-First Ready Badge */}
+              <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full shrink-0 shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="text-[8px] font-black text-emerald-800 font-mono tracking-wider uppercase">Luring Ready</span>
+              </div>
             </div>
           </div>
 

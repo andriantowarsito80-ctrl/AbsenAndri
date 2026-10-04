@@ -38,6 +38,7 @@ import KedisiplinanTab from "./components/KedisiplinanTab";
 import PengaturanTab from "./components/PengaturanTab";
 import ScannerTab from "./components/ScannerTab";
 import LoginScreen from "./components/LoginScreen";
+import { PWAInstallButton } from "./components/PWAInstallButton";
 import KartuQRTab from "./components/KartuQRTab";
 
 // Icon imports
@@ -1046,13 +1047,16 @@ export default function App() {
           </div>
         </div>
 
-        <button
-          id="btn-toggle-sidebar"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="p-2 hover:bg-slate-800 rounded-xl transition-all cursor-pointer"
-        >
-          {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <PWAInstallButton variant="compact" />
+          <button
+            id="btn-toggle-sidebar"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className="p-2 hover:bg-slate-800 rounded-xl transition-all cursor-pointer"
+          >
+            {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </header>
 
       {/* DETECT FLOATING HARDWARE BARCODE SUCCESS/ERROR NOTIFICATION */}
@@ -1150,6 +1154,7 @@ export default function App() {
 
           {/* Footer branding identity check */}
           <div className="p-6 border-t border-slate-800 flex flex-col gap-3">
+            <PWAInstallButton variant="full" />
             <div className="flex flex-col gap-1.5">
               <span className="text-[10px] text-slate-500 font-bold tracking-widest block uppercase">Coded in Cloud Ingress</span>
               <span className="text-[10px] text-slate-300 block font-semibold leading-normal">Tahun Pelajaran {profile.tahunPelajaran} • Semester {profile.semester}</span>

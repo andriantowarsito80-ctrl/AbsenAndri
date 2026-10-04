@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+  <!-- Background with smooth rounded squircle -->
+  <rect width="512" height="512" rx="112" fill="url(#blueGrad)" />
+  
+  <!-- Subtle decorative grid -->
+  <g opacity="0.12" stroke="#ffffff" stroke-width="2">
+    <line x1="64" y1="128" x2="448" y2="128" />
+    <line x1="64" y1="256" x2="448" y2="256" />
+    <line x1="64" y1="384" x2="448" y2="384" />
+    <line x1="128" y1="64" x2="128" y2="448" />
+    <line x1="256" y1="64" x2="256" y2="448" />
+    <line x1="384" y1="64" x2="384" y2="448" />
+  </g>
+
+  <!-- QR Outer Box Finders -->
+  <!-- Top Left -->
+  <rect x="96" y="96" width="104" height="104" rx="20" fill="none" stroke="#ffffff" stroke-width="16" />
+  <rect x="128" y="128" width="40" height="40" rx="8" fill="#ffffff" />
+
+  <!-- Top Right -->
+  <rect x="312" y="96" width="104" height="104" rx="20" fill="none" stroke="#ffffff" stroke-width="16" />
+  <rect x="344" y="128" width="40" height="40" rx="8" fill="#ffffff" />
+
+  <!-- Bottom Left -->
+  <rect x="96" y="312" width="104" height="104" rx="20" fill="none" stroke="#ffffff" stroke-width="16" />
+  <rect x="128" y="344" width="40" height="40" rx="8" fill="#ffffff" />
+
+  <!-- QR Data Dots -->
+  <rect x="236" y="104" width="36" height="36" rx="8" fill="#ffffff" opacity="0.9" />
+  <rect x="236" y="164" width="36" height="36" rx="8" fill="#ffffff" opacity="0.9" />
+  <rect x="104" y="236" width="36" height="36" rx="8" fill="#ffffff" opacity="0.9" />
+  <rect x="164" y="236" width="36" height="36" rx="8" fill="#ffffff" opacity="0.9" />
+  <rect x="312" y="236" width="36" height="36" rx="8" fill="#ffffff" opacity="0.9" />
+  <rect x="372" y="236" width="36" height="36" rx="8" fill="#ffffff" opacity="0.9" />
+  <rect x="236" y="312" width="36" height="36" rx="8" fill="#ffffff" opacity="0.9" />
+  <rect x="236" y="372" width="36" height="36" rx="8" fill="#ffffff" opacity="0.9" />
+  <rect x="312" y="312" width="44" height="44" rx="10" fill="#ffffff" opacity="0.9" />
+  <rect x="372" y="372" width="44" height="44" rx="10" fill="#ffffff" opacity="0.9" />
+
+  <!-- Central Badge: White disc with Attendance Checkmark -->
+  <g filter="url(#shadow)">
+    <circle cx="256" cy="256" r="68" fill="#ffffff" />
+    <circle cx="256" cy="256" r="58" fill="#10b981" />
+    <path d="M228 256 L248 276 L288 236" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
